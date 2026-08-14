@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#060914">
+  <meta name="description" content="ALISA — O‘zbekcha ovozli AI yordamchi">
+
+  <title>ALISA • O‘zbekcha AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="noise"></div>
+
+  <div class="aurora aurora-a"></div>
+  <div class="aurora aurora-b"></div>
+  <div class="aurora aurora-c"></div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <a href="#" class="brand">
+
+      <span class="brand-mark">
+        <span>A</span>
+      </span>
+
+      <span class="brand-copy">
+        <strong>ALISA</strong>
+        <small>O‘ZBEKCHA AI</small>
+      </span>
+
+    </a>
+
+    <div class="top-actions">
+
+      <span class="live-pill">
+        <i></i>
+        ONLINE
+      </span>
+
+      <button
+        class="icon-btn"
+        id="themeBtn"
+        title="Ko‘rinishni almashtirish"
+      >
+        ☼
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- MAIN -->
+  <main class="shell">
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="eyebrow">
+        <span>✦</span>
+        YANGI AVLOD OVOZLI YORDAMCHI
+        <span>✦</span>
+      </div>
+
+      <h1>
+        Gapiring.<br>
+        <span>Alisa bajarsin.</span>
+      </h1>
+
+      <p class="lead">
+        O‘zbek tilida buyruq bering.
+        Alisa sizni tinglaydi, tushunadi va javob beradi.
+      </p>
+
+
+      <!-- AI ORB -->
+      <div class="orb-wrap" id="orbWrap">
+
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+
+        <div class="orb">
+
+          <div class="orb-core">
+            <span>A</span>
+          </div>
+
+          <div class="orb-shine"></div>
+
+        </div>
+
+        <div class="orb-label">
+
+          <span class="dot"></span>
+
+          <span id="orbStatus">
+            TAYYOR
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONTROLS -->
+      <div class="voice-controls">
+
+        <button
+          class="listen-btn"
+          id="micBtn"
+        >
+
+          <span class="mic-symbol">
+            ◉
+          </span>
+
+          <span class="listen-text">
+            Gapirish
+          </span>
+
+          <span class="listen-shortcut">
+            SPACE
+          </span>
+
+        </button>
+
+
+        <button
+          class="secondary-btn"
+          id="stopBtn"
+        >
+          ■ To‘xtatish
+        </button>
+
+      </div>
+
+
+      <p class="support">
+        🎙️ Chrome brauzerida mikrofon ruxsatini bering
+      </p>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section class="dashboard">
+
+
+      <!-- CONVERSATION -->
+      <div class="panel conversation-panel">
+
+        <div class="panel-head">
+
+          <div>
+
+            <span class="panel-icon">
+              ◈
+            </span>
+
+            <div>
+
+              <strong>
+                Jonli suhbat
+              </strong>
+
+              <small>
+                Alisa bilan muloqot
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <button
+            class="clear-btn"
+            id="clearBtn"
+          >
+            Tozalash
+          </button>
+
+        </div>
+
+
+        <div
+          class="messages"
+          id="messages"
+        >
+
+          <article class="message ai">
+
+            <div class="avatar">
+              A
+            </div>
+
+            <div class="bubble">
+
+              <small>
+                ALISA
+              </small>
+
+              <p>
+                Salom! Men tayyorman.
+                Menga o‘zbekcha gapiring —
+                buyruqni imkon qadar tez bajaraman. ✨
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- TEXT INPUT -->
+        <div class="input-row">
+
+          <input
+            id="textInput"
+            autocomplete="off"
+            placeholder="Buyruqni shu yerga ham yozishingiz mumkin..."
+          >
+
+          <button id="sendBtn">
+            ➤
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT SIDE -->
+      <aside class="side-stack">
+
+
+        <!-- STATUS -->
+        <div class="panel status-panel">
+
+          <div class="panel-head">
+
+            <div>
+
+              <span class="panel-icon">
+                ◉
+              </span>
+
+              <div>
+
+                <strong>
+                  Holat
+                </strong>
+
+                <small>
+                  Yordamchi statusi
+                </small>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="status-main">
+
+            <span class="big-dot"></span>
+
+            <div>
+
+              <b id="statusTitle">
+                Tayyor
+              </b>
+
+              <span id="statusSub">
+                Buyruq kutyapman
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="meter">
+            <span id="meterFill"></span>
+          </div>
+
+
+          <div class="status-grid">
+
+            <div>
+
+              <span>
+                Til
+              </span>
+
+              <b>
+                O‘zbekcha
+              </b>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Ovoz
+              </span>
+
+              <b>
+                Muloyim
+              </b>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Rejim
+              </span>
+
+              <b id="modeText">
+                Tezkor
+              </b>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Buyruqlar
+              </span>
+
+              <b id="commandCount">
+                0
+              </b>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- QUICK COMMANDS -->
+        <div class="panel commands-panel">
+
+          <div class="panel-head">
+
+            <div>
+
+              <span class="panel-icon">
+                ⚡
+              </span>
+
+              <div>
+
+                <strong>
+                  Tezkor buyruqlar
+                </strong>
+
+                <small>
+                  Bir bosishda sinab ko‘ring
+                </small>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="quick-grid">
+
+            <button data-command="Salom Alisa">
+              👋
+              <span>
+                Salom
+              </span>
+            </button>
+
+
+            <button data-command="Soat nechchi?">
+              🕐
+              <span>
+                Vaqt
+              </span>
+            </button>
+
+
+            <button data-command="Bugun qanday kun?">
+              📅
+              <span>
+                Sana
+              </span>
+            </button>
+
+
+            <button data-command="Google'ni och">
+              🌐
+              <span>
+                Google
+              </span>
+            </button>
+
+
+            <button data-command="YouTube'ni och">
+              ▶
+              <span>
+                YouTube
+              </span>
+            </button>
+
+
+            <button data-command="Kalkulyatorni och">
+              🧮
+              <span>
+                Kalkulyator
+              </span>
+            </button>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="feature-grid">
+
+
+      <article class="feature">
+
+        <span>
+          01
+        </span>
+
+        <div class="feature-icon">
+          🎙
+        </div>
+
+        <h3>
+          Tezkor tinglash
+        </h3>
+
+        <p>
+          Gap tugashi bilan buyruqni
+          qayta ishlashga harakat qiladi.
+        </p>
+
+      </article>
+
+
+      <article class="feature">
+
+        <span>
+          02
+        </span>
+
+        <div class="feature-icon">
+          🧠
+        </div>
+
+        <h3>
+          O‘zbekcha javob
+        </h3>
+
+        <p>
+          Javoblar o‘zbek tilida,
+          qisqa va tabiiy uslubda beriladi.
+        </p>
+
+      </article>
+
+
+      <article class="feature">
+
+        <span>
+          03
+        </span>
+
+        <div class="feature-icon">
+          ✨
+        </div>
+
+        <h3>
+          Premium interfeys
+        </h3>
+
+        <p>
+          Yorqin orb, shisha panellar
+          va yumshoq animatsiyalar.
+        </p>
+
+      </article>
+
+
+      <article class="feature">
+
+        <span>
+          04
+        </span>
+
+        <div class="feature-icon">
+          ⚡
+        </div>
+
+        <h3>
+          Ko‘p buyruq
+        </h3>
+
+        <p>
+          Vaqt, sana, sayt ochish
+          va boshqa tezkor amallar.
+        </p>
+
+      </article>
+
+    </section>
+
+
+    <!-- COMMANDS -->
+    <section class="commands-section">
+
+      <div class="section-title">
+
+        <span>
+          ALISA NIMALARNI QILA OLADI?
+        </span>
+
+        <h2>
+          Bir nechta so‘z kifoya.
+        </h2>
+
+      </div>
+
+
+      <div class="command-cards">
+
+
+        <div class="command-card">
+
+          <b>
+            “Soat nechchi?”
+          </b>
+
+          <span>
+            Joriy vaqtni aytadi
+          </span>
+
+        </div>
+
+
+        <div class="command-card">
+
+          <b>
+            “Google’ni och”
+          </b>
+
+          <span>
+            Google saytini ochadi
+          </span>
+
+        </div>
+
+
+        <div class="command-card">
+
+          <b>
+            “YouTube’ni och”
+          </b>
+
+          <span>
+            YouTube saytini ochadi
+          </span>
+
+        </div>
+
+
+        <div class="command-card">
+
+          <b>
+            “Musiqa qo‘y”
+          </b>
+
+          <span>
+            Musiqa xizmatini ochadi
+          </span>
+
+        </div>
+
+
+        <div class="command-card">
+
+          <b>
+            “Bugun qanday kun?”
+          </b>
+
+          <span>
+            Sana va hafta kunini aytadi
+          </span>
+
+        </div>
+
+
+        <div class="command-card">
+
+          <b>
+            “Kalkulyatorni och”
+          </b>
+
+          <span>
+            Kalkulyatorni ishga tushiradi
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <span>
+      ALISA
+    </span>
+
+    • O‘zbekcha ovozli yordamchi • 2026
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
